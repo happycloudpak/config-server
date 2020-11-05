@@ -26,9 +26,9 @@ spec:
   
         envFrom:
         - configMapRef:
-          name: config-properties
+            name: config-properties
         - secretRef:
-          name: secret-properties
+            name: secret-properties
                             
         ports:
         - name: port1

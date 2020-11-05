@@ -1,6 +1,6 @@
 FROM openjdk:8-jdk-alpine
 
-ENV ARTIFACTORY_FILE backend-provider.jar
+ENV ARTIFACTORY_FILE config-server.jar
 ENV ARTIFACTORY_HOME /usr/artifactory
 
 # Add a docker user, make work dir

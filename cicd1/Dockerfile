@@ -1,7 +1,6 @@
 FROM openjdk:8-jdk-alpine
 
-ARG ARTIFACTORY_FILE
-ENV ARTIFACTORY_FILE ${ARTIFACTORY_FILE}
+ENV ARTIFACTORY_FILE config-server.jar
 ENV ARTIFACTORY_HOME /usr/artifactory
 
 # Add a docker user, make work dir
@@ -15,4 +14,4 @@ COPY ./target/${ARTIFACTORY_FILE} ${ARTIFACTORY_HOME}
 # Launch the artifactory as docker user
 ENTRYPOINT [ "sh", "-c" ]
 USER docker
-CMD [ "java -jar ${ARTIFACTORY_FILE} --spring.profiles.active=${PROFILE}" ]
+CMD [ "exec java -jar ${ARTIFACTORY_FILE}" ]

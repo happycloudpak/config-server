@@ -1,0 +1,17 @@
+spring:
+  cloud:
+    config:
+      server:        
+        git:
+          uri: https://${git_host:github.com}:${git_port:443}/${git_org:happycloudpak}/${git_repo:config-svcmesh.git}
+          username: ${git_id:happycloudpak}
+          password: ${git_pw:happy@cloud0}                            
+          search-paths: /                         #base directory to search profiles
+          default-label: ${git_branch:main}      #git branch
+          
+management:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh
+        

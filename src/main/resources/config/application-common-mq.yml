@@ -1,0 +1,12 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh
+        
+rabbitmq:
+  host: ${mq_host:localhost}
+  port: ${mq_port:5672}
+  username: ${mq_id:guest}
+  password: ${mq_pw:guest}
+  

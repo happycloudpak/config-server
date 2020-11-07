@@ -3,5 +3,5 @@ spring:
     name: config-server 
   profiles:
     active: local
-    include: common,common-mq
+    include: common,common-eureka,common-mq
 
